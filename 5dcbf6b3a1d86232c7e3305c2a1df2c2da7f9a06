@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_69b6afdc",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 14723
+      },
+      "writtenOn": "2016-08-20T20:53:04Z",
+      "side": 1,
+      "message": "# System properties\n-include $(LOCAL_PATH)/system_prop.mk",
+      "revId": "5dcbf6b3a1d86232c7e3305c2a1df2c2da7f9a06",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
