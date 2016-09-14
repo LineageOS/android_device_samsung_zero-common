@@ -16,6 +16,29 @@
       "revId": "78a1982e9f27808aee22668b27b71ed576692058",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_1e459d17",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-09-14T10:06:38Z",
+      "side": 1,
+      "message": "Is this even necessary if you\u0027re setting seclabel on your service define? (Actually curious here before I go through the pain of doing selinux bringups...)",
+      "range": {
+        "startLine": 120,
+        "startChar": 14,
+        "endLine": 120,
+        "endChar": 29
+      },
+      "revId": "78a1982e9f27808aee22668b27b71ed576692058",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
