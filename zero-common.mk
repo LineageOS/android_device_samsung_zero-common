@@ -91,8 +91,9 @@ PRODUCT_PACKAGES += \
     Gello
 
 # Camera
-PRODUCT_PACKAGES += \
-    Snap
+#PRODUCT_PACKAGES += \
+#    Snap
+
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
