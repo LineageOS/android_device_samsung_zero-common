@@ -1,0 +1,2 @@
+# HWCServices
+BOARD_USES_HWC_SERVICES := true
