@@ -1,4 +1,5 @@
 # TWRP
+ifneq ($(strip $(wildcard $(TOP)/bootable/recovery/variables.h)),)
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
@@ -15,3 +16,4 @@ TW_EXCLUDE_SUPERSU := true
 TW_SCREEN_BLANK_ON_BOOT := true
 
 PRODUCT_COPY_FILES += device/samsung/zero-common/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+endif
