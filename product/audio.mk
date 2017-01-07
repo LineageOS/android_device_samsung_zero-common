@@ -1,14 +1,7 @@
-# Audio
-PRODUCT_PACKAGES += \
-    audio.a2dp.default \
-    audio.primary.universal7420 \
-    audio.r_submix.default \
-    audio.usb.default \
-    tinymix
+include vendor/cm/device/product/common/audio.mk
 
-# Permissions
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml
+PRODUCT_PACKAGES += \
+    audio.primary.universal7420
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \

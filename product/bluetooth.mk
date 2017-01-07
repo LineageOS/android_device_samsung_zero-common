@@ -1,3 +1,1 @@
-# Permissions
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml
+include vendor/cm/device/product/common/bluetooth.mk

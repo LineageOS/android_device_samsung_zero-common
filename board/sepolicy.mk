@@ -1,3 +1,1 @@
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    $(LOCAL_PATH)/sepolicy
+include vendor/cm/device/board/common/sepolicy.mk

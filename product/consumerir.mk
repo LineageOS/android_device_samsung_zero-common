@@ -1,3 +1,1 @@
-# Permissions
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml
+include vendor/cm/device/product/common/consumerir.mk

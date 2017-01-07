@@ -1,2 +1,1 @@
-# Binder
-TARGET_USES_64_BIT_BINDER := true
+include vendor/cm/device/board/common/arm64/binder.mk
