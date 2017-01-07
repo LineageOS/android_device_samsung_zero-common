@@ -1,2 +1,1 @@
-# CPUsets
-ENABLE_CPUSETS := true
+include vendor/cm/device/board/common/cpusets.mk
