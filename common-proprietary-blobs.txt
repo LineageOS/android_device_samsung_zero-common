@@ -156,8 +156,8 @@ lib/hw/fingerprint.default.so:lib/hw/fingerprint.universal7420.so
 lib64/hw/fingerprint.default.so:lib64/hw/fingerprint.universal7420.so
 
 # Graphics
-vendor/lib/egl/libGLES_mali.so
-vendor/lib64/egl/libGLES_mali.so
+vendor/lib/egl/libGLES_mali.so|c0e1ead03c73a5f013004f90af00d2ff
+vendor/lib64/egl/libGLES_mali.so|792b2554a7bda40d81885bc46598c344
 
 # GPS
 bin/gpsd
