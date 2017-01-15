@@ -171,7 +171,6 @@ PRODUCT_PACKAGES += \
     libxml2 \
     libprotobuf-cpp-full
 
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.samsungexynos7420 \
