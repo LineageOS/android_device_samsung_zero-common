@@ -329,6 +329,7 @@
     -->
     <integer name="config_LTE_RSRP_threshold_type">2</integer>
 
+
     <!-- Indicate whether the lid state impacts the accessibility of
          the navigation buttons.  0 means it doesn't, 1 means it is accessible
          when the lid is open, 2 means it is accessible when the lid is
@@ -339,5 +340,16 @@
          it causes the device to wake up.
          The default is false. -->
     <bool name="config_lidControlsSleep">true</bool>
+
+    <!-- For performance and storage reasons, limit the number of fingerprints per user -->
+    <integer name="config_fingerprintMaxTemplatesPerUser">4</integer>
+
+    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
+        <item>"/system/framework/arm64/boot-framework.oat"</item>
+        <item>"/system/framework/oat/arm64/services.odex"</item>
+        <item>"/system/framework/arm64/boot.oat"</item>
+        <item>"/system/framework/arm64/boot-core-libart.oat"</item>
+   </string-array>
+
 
 </resources>
