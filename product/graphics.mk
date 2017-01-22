@@ -1,5 +1,5 @@
-PRODUCT_PACKAGES += \
-    gralloc.exynos5
+#PRODUCT_PACKAGES += \
+#    gralloc.exynos5
     
 # hw composer HAL
 PRODUCT_PACKAGES += \
