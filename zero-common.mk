@@ -32,5 +32,5 @@ endif
 # Include package config fragments
 include $(LOCAL_PATH)/product/*.mk
 
-# Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/samsung/zero-common/zero-common-vendor.mk)
+# Proprietary
+$(call inherit-product, device/samsung/zero-common/proprietary.mk)
