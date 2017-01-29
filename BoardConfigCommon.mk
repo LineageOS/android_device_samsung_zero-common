@@ -154,6 +154,10 @@ ifneq ($(strip $(wildcard $(TOP)/bootable/recovery/variables.h)),)
 -include device/samsung/zero-common/twrp.mk
 endif
 
+# Per LineageOS required...
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
+
 # WEBGL
 ENABLE_WEBGL := true
 
