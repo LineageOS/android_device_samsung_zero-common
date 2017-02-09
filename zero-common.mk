@@ -179,8 +179,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Radio
 PRODUCT_PACKAGES += \
-    libxml2 \
-    libprotobuf-cpp-full
+	libxml2 \
+	libprotobuf-cpp-full \
+	libsecril-client
 
 # Radio Properties
 PRODUCT_PROPERTY_OVERRIDES += \
