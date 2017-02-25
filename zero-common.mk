@@ -99,6 +99,10 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     Snap
+   
+# CM gesture actions
+PRODUCT_PACKAGES += \
+    CMAction
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
