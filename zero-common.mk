@@ -139,7 +139,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+    $(LOCAL_PATH)/configs/somxreg.conf:system/etc/somxreg.conf
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -169,6 +170,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     debug.hwc.force_gpu=1 \
     ro.bq.gpu_to_cpu_unsupported=1
+    
+# Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+	media.sf.omx-plugin=libffmpeg_omx.so,libsomxcore.so
 
 # Radio
 PRODUCT_PACKAGES += \
