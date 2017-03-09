@@ -254,7 +254,7 @@
     <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
 
     <!-- The default iface on which to monitor data use -->
-    <string name="config_datause_iface" translatable="false">rmnet0</string>
+    <string name="config_datause_iface" translatable="false">rmnet1</string>
 
     <!-- Boolean indicating if restoring network selection should be skipped -->
     <!-- The restoring is handled by modem if it is true -->
