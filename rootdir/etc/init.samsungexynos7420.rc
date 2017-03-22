@@ -8,7 +8,6 @@ on early-init
 
 on init
     export LD_SHIM_LIBS "/system/lib64/hw/fingerprint.vendor.exynos5.so|/system/lib64/libshim_bauthtzcommon.so"
-    export LD_SHIM_LIBS "/system/bin/gpsd|libshim_gpsd.so:/system/vendor/lib/libwvm.so|libshim_wvm.so"
 
     mkdir /preload 0771 system system
 
@@ -28,28 +27,63 @@ on post-fs
 on post-fs-data
     setprop vold.post_fs_data_done 1
 
+# cpuset permissions
+    chmod 0664 /dev/cpuset/foreground/cpus
+    chown system system /dev/cpuset/foreground/cpus
+    chmod 0664 /dev/cpuset/foreground/boost/cpus
+    chown system system /dev/cpuset/foreground/boost/cpus
+    chmod 0664 /dev/cpuset/background/cpus
+    chown system system /dev/cpuset/background/cpus
+    chmod 0664 /dev/cpuset/system-background/cpus
+    chown system system /dev/cpuset/system-background/cpus
+    chmod 0664 /dev/cpuset/top-app/cpus
+    chown system system /dev/cpuset/top-app/cpus
+    chmod 0664 /dev/cpuset/camera-daemon/cpus
+    chown system system /dev/cpuset/camera-daemon/cpus
+
+# cpuset setup for camera-daemon
+    mkdir /dev/cpuset/camera-daemon
+    chown system system /dev/cpuset/camera-daemon
+    chmod 0664 /dev/cpuset/camera-daemon
+    chown system system /dev/cpuset/camera-daemon/cpus
+    chmod 0664 /dev/cpuset/camera-daemon/cpus
+    chown system system /dev/cpuset/camera-daemon/mems
+    chmod 0664 /dev/cpuset/camera-daemon/mems
+    chown system system /dev/cpuset/camera-daemon/tasks
+    chmod 0664 /dev/cpuset/camera-daemon/tasks
+    write /dev/cpuset/camera-daemon/cpus 0
+    write /dev/cpuset/camera-daemon/mems 0
+
+# cpuset settings
+    write /dev/cpuset/foreground/cpus 0-2,4-7
+    write /dev/cpuset/foreground/boost/cpus 4-7
+    write /dev/cpuset/background/cpus 0
+    write /dev/cpuset/system-background/cpus 0-2
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/camera-daemon/cpus 0-3
+
 # Permissions for audio
     chown system radio /sys/class/audio/earjack/select_jack
     chown system radio /sys/class/audio/earjack/key_state
     chown system radio /sys/class/audio/earjack/state
     chown system radio /sys/class/audio/earjack/mic_adc
-    chown system radio /sys/class/dsm/max98505/dsm_log
-    chown system radio /sys/class/dsm/maxdsm_cal/max
-    chown system radio /sys/class/dsm/maxdsm_cal/min
-    chown system radio /sys/class/dsm/maxdsm_cal/status
-    chown system radio /sys/class/dsm/maxdsm_cal/duration
-    chown system radio /sys/class/dsm/maxdsm_cal/temp
-    chown system radio /sys/class/dsm/maxdsm_cal/rdc
-    mkdir /data/firmware 0770 media system
-    mkdir /efs/maxim 0770 radio system
-    chown system radio /efs/maxim/temp_cal
-    chown system radio /efs/maxim/rdc_cal
+    chown system audio /sys/class/dsm/max98505/dsm_log
+    chown system audio /sys/class/dsm/maxdsm_cal/max
+    chown system audio /sys/class/dsm/maxdsm_cal/min
+    chown system audio /sys/class/dsm/maxdsm_cal/status
+    chown system audio /sys/class/dsm/maxdsm_cal/duration
+    chown system audio /sys/class/dsm/maxdsm_cal/temp
+    chown system audio /sys/class/dsm/maxdsm_cal/rdc
+    mkdir /data/firmware 0770 audioserver system
+    mkdir /efs/maxim 0770 system audio
+    chown system audio /efs/maxim/temp_cal
+    chown system audio /efs/maxim/rdc_cal
     chmod 0660 /efs/maxim/temp_cal
     chmod 0660 /efs/maxim/rdc_cal
-    chown media system /data/firmware
+    chown audioserver system /data/firmware
 
     # Permissions Camera
-    mkdir /data/camera 0770 media system
+    mkdir /data/camera 0770 cameraserver system
     chown system radio /sys/class/camera/rear/rear_camfw
     chown system radio /sys/class/camera/rear/rear_camfw_full
     chown system radio /sys/class/camera/rear/rear_checkfw_user
@@ -63,7 +97,8 @@ on post-fs-data
     chown system radio /sys/class/camera/rear/fw_update
     chown system radio /sys/class/camera/rear/from_write
     chown system radio /sys/class/camera/flash/rear_flash
-    chown media system /sys/class/camera/flash/torch_flash
+    chown cameraserver system /sys/class/camera/flash/torch_flash
+    chown cameraserver system /sys/class/camera/flash/rear_torch_flash
     chown system radio /sys/class/camera/front/front_camfw
     chown system radio /sys/class/camera/front/front_camfw_full
     chown system radio /sys/class/camera/front/front_checkfw_factory
@@ -182,8 +217,8 @@ on post-fs-data
     chown media system /dev/socket/uibc
     chmod 0775 /dev/socket/uibc
 
-    # Vibetonz 
-    chmod 0660 /dev/tspdrv 
+    # Vibetonz
+    chmod 0660 /dev/tspdrv
     chown vibe vibe /dev/tspdrv
 
     # for BT MAC address
@@ -192,58 +227,16 @@ on post-fs-data
     chown radio system /efs/bluetooth
     chmod 0775 /efs/bluetooth
 
-on boot
-    # Turn on CPU cores
-    write /sys/power/enable_dm_hotplug 0
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/devices/system/cpu/cpu4/online 1
-    write /sys/devices/system/cpu/cpu5/online 1
-    write /sys/devices/system/cpu/cpu6/online 1
-    write /sys/devices/system/cpu/cpu7/online 1
+on early-boot
+    # Remove symlinks to avoid issues with migrate after nandroid restores
+    # Will be recreated at end of boot
+    rm /data/data/com.android.providers.telephony/databases/telephony.db
+    rm /data/data/com.android.providers.telephony/shared_prefs/preferred-apn.xml
 
-    # Configure foreground and background cpuset
-    write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/foreground/boost/cpus 4-7
-    write /dev/cpuset/background/cpus 0
-    write /dev/cpuset/system-background/cpus 0-3
+on boot
 
     # Set vibrator intensity 75%
     write /sys/devices/virtual/timed_output/vibrator/intensity 7500
-
-    # update foreground cpuset now that processors are up
-    write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/foreground/boost/cpus 4-7
-    write /dev/cpuset/background/cpus 0
-    write /dev/cpuset/system-background/cpus 0-3
-
-    # Memory managements
-    write /proc/sys/vm/min_free_kbytes 32768
-    write /proc/sys/vm/min_free_order_shift 1
-    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 40960
-
-    # CPU governor settings
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack 20000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 40000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 900000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 85
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 75
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 19000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 40000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack 20000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 40000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1200000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 89
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "65 1500000:75"
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay "59000 1300000:39000 1700000:19000"
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration 40000
-    # io_is_busy
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/virtual/sec/sec_slow/io_is_busy 1
 
     #setprop ro.radio.noril yes
 
@@ -521,7 +514,7 @@ on boot
     chown system radio /sys/class/android_usb/android0/usb_lock
 
 # SSWAP
-    write /proc/sys/vm/swappiness 130
+    write /proc/sys/vm/swappiness 200
 
     # FM Radio
     chmod 0640 /dev/fmradio
@@ -802,6 +795,9 @@ on fs
     chown system radio /sys/class/sensors/irled_remote/irled_send
     chown system radio /sys/class/sensors/irled_remote/irled_send_result
 
+# Default MDNIE mode (cinema)
+    write /sys/class/mdnie/mdnie/mode 3
+
 # Copy DRM Key
     copy /system/app/wv.keys /factory/wv.keys
 
@@ -995,22 +991,19 @@ on property:ro.debuggable=1
 on property:sys.boot_completed=1
     write /proc/sys/vm/dirty_bytes 62914560
     write /proc/sys/vm/dirty_background_bytes 20971520
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/devices/system/cpu/cpu4/online 1
-    write /sys/devices/system/cpu/cpu5/online 1
-    write /sys/devices/system/cpu/cpu6/online 1
-    write /sys/devices/system/cpu/cpu7/online 1
-    write /sys/power/enable_dm_hotplug 1
+
+    # Symlink telephony.db and preferred-apn.xml
+    mkdir /data/data/com.android.providers.telephony/databases 0700 radio radio
+    mkdir /data/data/com.android.providers.telephony/shared_prefs 0700 radio radio
+    symlink /data/user_de/0/com.android.providers.telephony/databases/telephony.db /data/data/com.android.providers.telephony/databases/telephony.db
+    symlink /data/user_de/0/com.android.providers.telephony/shared_prefs/preferred-apn.xml /data/data/com.android.providers.telephony/shared_prefs/preferred-apn.xml
+
+    # Fix file contexts for the directories; needed for upgrade from earlier
+    # 7.x versions, NOOP for clean flashes
+    restorecon /data/data/com.android.providers.telephony/databases
+    restorecon /data/data/com.android.providers.telephony/shared_prefs
 
 on charger
-# Set cpu governor to interactive while in charging mode
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor powersave
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor powersave
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor powersave
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor powersave
-
 # Do not set any USB mode while charging
     setprop sys.usb.config charging
 
@@ -1020,6 +1013,7 @@ on charger
 service battery_charger /sbin/healthd -c
     class charger
     critical
+    seclabel u:r:healthd:s0
 
 # DRK/CS service
 service cs_service /system/bin/cs
@@ -1040,3 +1034,7 @@ service ipsec-daemon /system/bin/IPSecService
     socket ipsec_socket stream 660 system system
     user system
     group system net_raw inet net_admin
+
+# Touchkey
+    chown system system /sys/class/sec/sec_touchkey/touchkey_enable
+    chmod 0660 /sys/class/sec/sec_touchkey/touchkey_enable
