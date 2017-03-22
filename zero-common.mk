@@ -102,6 +102,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     dtbhtoolExynos
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    fingerprint.exynos5 \
+    fingerprintd 
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
@@ -113,8 +118,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/lhd.conf:system/etc/lhd.conf
 
 # Graphics
-PRODUCT_PACKAGES += \
-    gralloc.exynos5
+#PRODUCT_PACKAGES += \
+#    gralloc.exynos5
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -195,7 +200,8 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libshim_gpsd
+    libshim_gpsd \
+    libbauthtzcommon_shim
 
 # Widevine
 PRODUCT_PACKAGES += \
