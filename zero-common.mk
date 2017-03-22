@@ -82,14 +82,13 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/configs/mixer_paths.xml:system/etc/mixer_paths.xml
+    $(LOCAL_PATH)/configs/mixer_paths_0.xml:system/etc/mixer_paths_0.xml \
 
 PRODUCT_PACKAGES += \
     audio.primary.universal7420 \
     audio.a2dp.default \
     audio.r_submix.default \
-    audio.usb.default \
-    tinymix
+    audio.usb.default
 
 # Browser
 PRODUCT_PACKAGES += \
