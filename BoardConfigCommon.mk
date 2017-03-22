@@ -155,6 +155,9 @@ ifneq ($(strip $(wildcard $(TOP)/bootable/recovery/variables.h)),)
 -include device/samsung/zero-common/twrp.mk
 endif
 
+# Video scaling issue workaround
+TARGET_OMX_LEGACY_RESCALING := true
+
 # WEBGL
 ENABLE_WEBGL := true
 
