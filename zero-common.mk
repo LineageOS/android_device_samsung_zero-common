@@ -98,6 +98,10 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #    Snap
 
+# Dbthtool
+PRODUCT_PACKAGES += \
+    dtbhtoolExynos
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
