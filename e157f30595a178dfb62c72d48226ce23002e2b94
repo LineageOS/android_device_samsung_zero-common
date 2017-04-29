@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_a5739514",
+        "filename": "rootdir/etc/init.samsungexynos7420.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2017-04-29T11:02:13Z",
+      "side": 1,
+      "message": "looks like none of this is needed, it\u0027s just doing the same thing as L210-216 (correct me if i\u0027m wrong)",
+      "range": {
+        "startLine": 217,
+        "startChar": 0,
+        "endLine": 223,
+        "endChar": 38
+      },
+      "revId": "e157f30595a178dfb62c72d48226ce23002e2b94",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
