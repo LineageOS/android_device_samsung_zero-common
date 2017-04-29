@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_c5f1f196",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 16082
+      },
+      "writtenOn": "2017-04-29T10:50:20Z",
+      "side": 1,
+      "message": "I\u0027m not sure these are related to your commit message",
+      "range": {
+        "startLine": 347,
+        "startChar": 0,
+        "endLine": 352,
+        "endChar": 18
+      },
+      "revId": "32fe7c0d4c7e41e2bd36aa3aaf431eee7cc53909",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
