@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_00a0178f",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 16082
+      },
+      "writtenOn": "2017-04-29T14:41:01Z",
+      "side": 1,
+      "message": "This could do with a better comment... \n\nPerhaps \"Set bootanimation dimensions\"",
+      "range": {
+        "startLine": 157,
+        "startChar": 2,
+        "endLine": 157,
+        "endChar": 27
+      },
+      "revId": "faee74f97d1b974dc0f62952d089db07763d55cd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
