@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_bb796dfe",
+        "filename": "sepolicy/audioserver.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2017-05-01T06:44:21Z",
+      "side": 1,
+      "message": "should be audioserver?",
+      "range": {
+        "startLine": 1,
+        "startChar": 27,
+        "endLine": 1,
+        "endChar": 31
+      },
+      "revId": "8b7dc8e45593e5fd9d3d7d3d45c964e3494122d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_7b83f5cc",
+        "filename": "sepolicy/rild.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2017-05-01T06:44:21Z",
+      "side": 1,
+      "message": "isn\u0027t this just /proc/\u003cpid\u003e?",
+      "revId": "8b7dc8e45593e5fd9d3d7d3d45c964e3494122d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
