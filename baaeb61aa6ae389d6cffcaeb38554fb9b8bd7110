@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_f2e13f9b",
+        "filename": "common-proprietary-blobs.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2017-05-03T15:08:04Z",
+      "side": 1,
+      "message": "a second omx section?",
+      "range": {
+        "startLine": 262,
+        "startChar": 0,
+        "endLine": 282,
+        "endChar": 38
+      },
+      "revId": "baaeb61aa6ae389d6cffcaeb38554fb9b8bd7110",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
