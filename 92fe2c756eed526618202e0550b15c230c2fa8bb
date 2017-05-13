@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_42c02e50",
+        "filename": "zero-common.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2017-05-13T16:25:34Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "92fe2c756eed526618202e0550b15c230c2fa8bb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
