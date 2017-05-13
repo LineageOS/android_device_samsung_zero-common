@@ -22,6 +22,30 @@
       "revId": "baaeb61aa6ae389d6cffcaeb38554fb9b8bd7110",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_2351cb62",
+        "filename": "common-proprietary-blobs.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 16704
+      },
+      "writtenOn": "2017-05-13T16:39:55Z",
+      "side": 1,
+      "message": "These are different.",
+      "parentUuid": "1a486d77_f2e13f9b",
+      "range": {
+        "startLine": 262,
+        "startChar": 0,
+        "endLine": 282,
+        "endChar": 38
+      },
+      "revId": "baaeb61aa6ae389d6cffcaeb38554fb9b8bd7110",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
