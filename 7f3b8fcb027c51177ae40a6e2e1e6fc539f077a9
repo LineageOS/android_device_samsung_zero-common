@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_c2e41e0f",
+        "filename": "zero-common.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2017-05-13T16:25:06Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "7f3b8fcb027c51177ae40a6e2e1e6fc539f077a9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_a2f122cf",
+        "filename": "zero-common.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2017-05-13T16:25:06Z",
+      "side": 1,
+      "message": "spaces not tabs",
+      "revId": "7f3b8fcb027c51177ae40a6e2e1e6fc539f077a9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
