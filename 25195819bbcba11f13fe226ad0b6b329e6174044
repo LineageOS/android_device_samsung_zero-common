@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "a99dca62_cd80f5b1",
+        "filename": "common-proprietary-blobs.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-12-16T20:07:19Z",
+      "side": 1,
+      "message": "We have the wrapper in hardware/samsung, you could just switch to it",
+      "parentUuid": "741db110_495c2feb",
+      "range": {
+        "startLine": 87,
+        "startChar": 4,
+        "endLine": 87,
+        "endChar": 16
+      },
+      "revId": "25195819bbcba11f13fe226ad0b6b329e6174044",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffda6ed2_9592dcba",
         "filename": "common-proprietary-blobs.txt",
         "patchSetId": 4
