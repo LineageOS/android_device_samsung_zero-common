@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "290c535b_473af3c9",
+        "filename": "common-proprietary-blobs.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-12-16T18:13:08Z",
+      "side": 1,
+      "message": "what kind of not sorting did you sure?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 34
+      },
+      "revId": "a6020c46d82d89a443c2e968976403bbcbc1d41b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
