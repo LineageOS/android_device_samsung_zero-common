@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "741db110_495c2feb",
+        "filename": "common-proprietary-blobs.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 16704
+      },
+      "writtenOn": "2017-12-16T20:05:21Z",
+      "side": 1,
+      "message": "Yes, has specific patch from raymanfx. Otherwise I would need shim/wrapper.",
+      "parentUuid": "39963c01_274c7500",
+      "range": {
+        "startLine": 87,
+        "startChar": 4,
+        "endLine": 87,
+        "endChar": 16
+      },
+      "revId": "25195819bbcba11f13fe226ad0b6b329e6174044",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffda6ed2_9592dcba",
         "filename": "common-proprietary-blobs.txt",
         "patchSetId": 4
