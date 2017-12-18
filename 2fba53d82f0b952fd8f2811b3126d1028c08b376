@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "395d7963_8d64ab8c",
+        "filename": "common-proprietary-blobs.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 15173
+      },
+      "writtenOn": "2017-12-18T22:47:15Z",
+      "side": 1,
+      "message": "Since this isn\u0027t in system/ on stock, you will likely want to pin it, else it will eventually end up getting accidentally deleted on blob update at some point.\n\n/me has been there",
+      "range": {
+        "startLine": 348,
+        "startChar": 0,
+        "endLine": 348,
+        "endChar": 7
+      },
+      "revId": "2fba53d82f0b952fd8f2811b3126d1028c08b376",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
