@@ -276,6 +276,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SamsungServiceMode
 
+# Skeletons
+PRODUCT_PACKAGES += \
+	android.hidl.base@1.0
+
 # seccomp
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec.policy:system/vendor/etc/seccomp_policy/mediacodec.policy
