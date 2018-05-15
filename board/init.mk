@@ -1,0 +1,2 @@
+# Init
+TARGET_UNIFIED_DEVICE := true
