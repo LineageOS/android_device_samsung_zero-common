@@ -138,6 +138,7 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
+    fingerprintd \
     fingerprint.exynos5 \
     libbauthtzcommon_shim \
     android.hardware.biometrics.fingerprint@2.1-impl \
@@ -241,12 +242,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     debug.hwc.force_gpu=1 \
     ro.bq.gpu_to_cpu_unsupported=1
-    
+
 # media build properties
 PRODUCT_PROPERTY_OVERRIDES += \
 	media.sf.omx-plugin=libffmpeg_omx.so,libsomxcore.so \
 	persist.media.treble_omx=false
-	
+
 # OpenMAX-shims
 PRODUCT_PACKAGES += \
     libui_shim \
@@ -279,7 +280,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.hsxpa=1 \
     ro.ril.telephony.mqanelements=6 \
     ro.ril.gprsclass=10
-    
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.samsungexynos7420 \
