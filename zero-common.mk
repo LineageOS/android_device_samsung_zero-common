@@ -234,6 +234,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
+# Persistent Storage
+PRODUCT_PACKAGES += \
+	zerops \
+	libzerops
+
 # Power
 PRODUCT_PACKAGES += \
     power.universal7420 \
