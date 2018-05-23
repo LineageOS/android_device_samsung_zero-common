@@ -190,6 +190,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstlport
 
+# Live Display
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@1.0-service.zero \
+    vendor.lineage.livedisplay-V1.0-java
+    
+## Frameworks
+PRODUCT_BOOT_JARS += \
+	vendor.lineage.livedisplay-V1.0-java
+
 # MDNIE
 # PRODUCT_PACKAGES += \
 #     AdvancedDisplay
@@ -254,7 +263,8 @@ PRODUCT_PACKAGES += \
     libExynosOMX_shim
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/android.hardware.media.omx@1.0-service.rc:system/vendor/etc/init/android.hardware.media.omx@1.0-service.rc
+    $(LOCAL_PATH)/configs/android.hardware.media.omx@1.0-service.rc:system/vendor/etc/init/android.hardware.media.omx@1.0-service.rc \
+    $(LOCAL_PATH)/hardware/livedisplay/vendor.lineage.livedisplay@1.0-service.zero.rc:system/vendor/etc/init/vendor.lineage.livedisplay@1.0-service.zero.rc
 
 # Radio
 PRODUCT_PACKAGES += \

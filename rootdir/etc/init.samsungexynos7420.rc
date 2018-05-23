@@ -688,6 +688,10 @@ on fs
     chown system system /sys/class/lcd/panel/temperature
     chown system media_rw /sys/class/backlight/panel/weakness_hbm_comp
 
+# Permissions for LCD Adaptive Control
+    chown system system /sys/class/lcd/panel/adaptive_control
+	cmod 0660 /sys/class/lcd/panel/adaptive_control
+
 # Permissions for MDNIE
     chown system media_rw /sys/class/mdnie/mdnie/mode
     chown system media_rw /sys/class/mdnie/mdnie/scenario
