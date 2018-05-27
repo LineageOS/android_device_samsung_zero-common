@@ -116,6 +116,7 @@ PRODUCT_COPY_FILES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprintd \
+    fingerprint.exynos5 \
     libbauthtzcommon_shim
 
 # Graphics
