@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "libbauthtzcommon_shim"
+#define LOG_TAG "libbauthtserver_shim"
 #define LOG_NDEBUG 0
 
 #include <cutils/log.h>
