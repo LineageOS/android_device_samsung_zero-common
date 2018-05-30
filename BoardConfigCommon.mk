@@ -76,10 +76,6 @@ TARGET_LD_SHIM_LIBS += \
 # Audio HAL variant
 TARGET_AUDIOHAL_VARIANT := samsung
 
-# Fingerprint-shims
-TARGET_LD_SHIM_LIBS += \
-	/system/lib64/hw/fingerprint.default.so|/system/lib64/libbauthtzcommon_shim.so
-
 # Graphics
 USE_OPENGL_RENDERER := true
 BOARD_USES_VIRTUAL_DISPLAY := true
@@ -193,6 +189,7 @@ TARGET_LD_SHIM_LIBS += \
 
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
+TARGET_SEC_FP_HAL_VARIANT := bauth
 
 # Seccomp filters
 BOARD_SECCOMP_POLICY += device/samsung/zero-common/seccomp
