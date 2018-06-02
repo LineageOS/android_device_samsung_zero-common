@@ -198,6 +198,9 @@ TARGET_LD_SHIM_LIBS += \
 # Seccomp filters
 BOARD_SECCOMP_POLICY += device/samsung/zero-common/seccomp
 
+# Security
+BOARD_USES_TRUST_KEYMASTER := true
+
 # Sepolicy
 BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
 
