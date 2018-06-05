@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ea5f7431_6af89a44",
+        "filename": "lineagehw/org/lineage/hardware/ReadingEnhancement.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6334
+      },
+      "writtenOn": "2018-06-05T15:57:22Z",
+      "side": 1,
+      "message": "ew tabs",
+      "revId": "b61ca17612d94baba7c98b410f23429511a4c8ab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
