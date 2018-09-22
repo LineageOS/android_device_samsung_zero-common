@@ -99,7 +99,7 @@ PRODUCT_PACKAGES += \
     camera.exynos5 \
     Snap
 
-# DTB    
+# DTB
 PRODUCT_PACKAGES += \
 	dtbhtoolExynos
 
@@ -180,10 +180,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     debug.hwc.force_gpu=1 \
     ro.bq.gpu_to_cpu_unsupported=1
-    
+
 # media build properties
 PRODUCT_PROPERTY_OVERRIDES += \
-	media.sf.omx-plugin=libffmpeg_omx.so,libsomxcore.so 
+	media.sf.omx-plugin=libffmpeg_omx.so,libsomxcore.so
 
 
 # Radio
@@ -207,8 +207,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.netmgrd.qos.enable=false \
     ro.ril.hsxpa=1 \
     ro.ril.telephony.mqanelements=6 \
-    ro.ril.gprsclass=10
-    
+    ro.ril.gprsclass=10 \
+    ro.config.media_vol_steps=25 \
+    ro.config.vc_call_vol_steps=15
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.samsungexynos7420 \
