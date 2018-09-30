@@ -234,22 +234,8 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service \
     android.hardware.power@1.0-impl
 
-# common build properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=640 \
-    ro.opengles.version=196609 \
-    ro.chipname=exynos7420 \
-    af.fast_track_multiplier=1 \
-    audio_hal.force_voice_config=wide \
-    ro.nfc.sec_hal=true \
-    wifi.interface=wlan0 \
-    debug.hwc.force_gpu=1 \
-    ro.bq.gpu_to_cpu_unsupported=1
-    
-# media build properties
-PRODUCT_PROPERTY_OVERRIDES += \
-	media.sf.omx-plugin=libffmpeg_omx.so,libsomxcore.so \
-	persist.media.treble_omx=false
+# Properties 
+TARGET_SYSTEM_PROP += device/samsung/zero-common/system.prop
 	
 # OpenMAX-shims
 PRODUCT_PACKAGES += \
@@ -270,22 +256,6 @@ PRODUCT_PACKAGES += \
 	android.hardware.radio@1.0 \
 	android.hardware.radio.deprecated@1.0 \
         modemloader
-
-# Radio Properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.add_power_save=1 \
-    persist.radio.apm_sim_not_pwdn=1 \
-    rild.libpath=/system/lib64/libsec-ril.so \
-    rild.libpath2=/system/lib64/libsec-ril-dsds.so \
-    ro.telephony.ril_class=SlteRIL \
-    telephony.lteOnGsmDevice=1 \
-    telephony.lteOnCdmaDevice=0 \
-    ro.telephony.default_network=9 \
-    ro.use_data_netmgrd=false \
-    persist.data.netmgrd.qos.enable=false \
-    ro.ril.hsxpa=1 \
-    ro.ril.telephony.mqanelements=6 \
-    ro.ril.gprsclass=10
     
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -351,9 +321,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/filter_ie:system/etc/wifi/filter_ie
 
-# Set default USB interface
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
 
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
