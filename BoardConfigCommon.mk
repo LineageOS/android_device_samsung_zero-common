@@ -73,9 +73,6 @@ TARGET_LD_SHIM_LIBS += \
 	/system/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
 	/system/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
 
-# Audio HAL variant
-TARGET_AUDIOHAL_VARIANT := samsung
-
 # Graphics
 USE_OPENGL_RENDERER := true
 BOARD_USES_VIRTUAL_DISPLAY := true
