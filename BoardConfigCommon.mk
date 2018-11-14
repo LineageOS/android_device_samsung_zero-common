@@ -87,7 +87,7 @@ BOARD_USES_DT := true
 
 # GPS-shims
 TARGET_LD_SHIM_LIBS += \
-	/system/bin/gpsd|/vendor/lib64/gpsd_shim.so
+	/system/bin/gpsd|/system/lib64/libsensor.so
 
 # Hardware
 BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
