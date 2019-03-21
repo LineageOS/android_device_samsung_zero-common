@@ -81,9 +81,18 @@ lib/libseccamera_jni.so
 lib/libsecnativefeature.so
 
 # DRM
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
+bin/wvkprov
+lib/drm/libomaplugin.so
+lib/drm/libplayreadyplugin.so
+lib/libhdcp2.so
+lib/libomafldrm.so
+lib/libprotobuf-cpp-nice.so
+lib/libstagefright_hdcp.so
+lib64/drm/libomaplugin.so
+lib64/drm/libplayreadyplugin.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 
 # Fingerprint
 lib64/libbauthserver.so
@@ -99,24 +108,25 @@ lib64/libwrappergps.so
 lib/libwrappergps.so
 
 # Graphics
-lib64/egl/libGLES_android.so
-lib64/hw/gralloc.exynos5.so
-lib64/libexynosgscaler.so
-lib64/libexynosscaler.so
-lib64/libexynosv4l2.so
+lib/egl/egl.cfg
 lib/egl/libGLES_android.so
 lib/hw/gralloc.exynos5.so
 lib/libexynosgscaler.so
 lib/libexynosscaler.so
 lib/libexynosv4l2.so
-vendor/lib64/egl/libGLES_mali.so
-vendor/lib64/hw/vulkan.exynos5.so
+lib64/egl/libGLES_android.so
+lib64/hw/gralloc.exynos5.so
+lib64/libexynosgscaler.so
+lib64/libexynosscaler.so
+lib64/libexynosv4l2.so
 vendor/lib/egl/libGLES_mali.so
 vendor/lib/hw/vulkan.exynos5.so
-vendor/lib64/libOpenCL.so
-vendor/lib64/libOpenCv.so
 vendor/lib/libOpenCL.so
 vendor/lib/libOpenCv.so
+vendor/lib64/egl/libGLES_mali.so
+vendor/lib64/hw/vulkan.exynos5.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/libOpenCv.so
 
 # IR
 lib/hw/consumerir.exynos5.so
@@ -150,21 +160,53 @@ lib/libion.so
 
 # Mobicore
 app/FFFFFFFF000000000000000000000001.drbin
+app/mcRegistry/00060308060501020000000000000000.tlbin
+app/mcRegistry/07010000000000000000000000000000.tlbin
+app/mcRegistry/07060000000000000000000000000000.tlbin
+app/mcRegistry/08130000000000000000000000000000.tlbin
+app/mcRegistry/ffffffff000000000000000000000004.tlbin
+app/mcRegistry/ffffffff000000000000000000000005.tlbin
+app/mcRegistry/ffffffff00000000000000000000000a.tlbin
+app/mcRegistry/ffffffff00000000000000000000000b.tlbin
+app/mcRegistry/ffffffff00000000000000000000000c.tlbin
+app/mcRegistry/ffffffff00000000000000000000000d.tlbin
 app/mcRegistry/ffffffff00000000000000000000000e.tlbin
+app/mcRegistry/ffffffff00000000000000000000000f.tlbin
+app/mcRegistry/ffffffff000000000000000000000012.tlbin
+app/mcRegistry/ffffffff000000000000000000000013.tlbin
+app/mcRegistry/ffffffff000000000000000000000014.tlbin
+app/mcRegistry/ffffffff000000000000000000000016.tlbin
+app/mcRegistry/ffffffff000000000000000000000017.tlbin
+app/mcRegistry/ffffffff000000000000000000000019.tlbin
+app/mcRegistry/ffffffff00000000000000000000001f.tlbin
+app/mcRegistry/ffffffff000000000000000000000021.tlbin
+app/mcRegistry/ffffffff00000000000000000000002a.tlbin
+app/mcRegistry/ffffffff000000000000000000000038.tlbin
+app/mcRegistry/ffffffff00000000000000000000003e.tlbin
+app/mcRegistry/ffffffff000000000000000000000041.tlbin
+app/mcRegistry/ffffffffd00000000000000000000004.tlbin
 app/mcRegistry/ffffffffd0000000000000000000000a.tlbin
 app/mcRegistry/ffffffffd0000000000000000000000e.tlbin
+app/mcRegistry/ffffffffd00000000000000000000014.tlbin
 app/mcRegistry/ffffffffd00000000000000000000016.tlbin
+app/mcRegistry/ffffffffd00000000000000000000017.tlbin
+app/mcRegistry/fffffffff0000000000000000000001b.tlbin
+app/mcRegistry/fffffffff0000000000000000000001e.tlbin
 bin/mcDriverDaemon
-lib64/libMcClient.so
-lib64/libMcRegistry.so
 lib/libMcClient.so
 lib/libMcRegistry.so
+lib64/libMcClient.so
+lib64/libMcRegistry.so
 
 # NFC
-etc/nfc/sec_s3fwrn5p_rfreg.bin
 etc/nfc/THL/sec_s3fwrn5p_rfreg.bin
-lib64/hw/nfc_nci.universal7420.so
-lib/hw/nfc_nci.universal7420.so
+etc/nfc/sec_s3fwrn5p_rfreg.bin
+lib/hw/nfc_nci.default.so
+lib/hw/vendor.samsung.hardware.nfc@1.0-impl.so
+lib/vendor.samsung.hardware.nfc@1.0.so
+lib64/hw/nfc_nci.default.so
+lib64/hw/vendor.samsung.hardware.nfc@1.0-impl.so
+lib64/vendor.samsung.hardware.nfc@1.0.so
 vendor/firmware/nfc/sec_s3fwrn5p_firmware.bin
 
 # NXP
@@ -362,11 +404,9 @@ lib64/hw/sensorhubs.universal7420.so
 lib64/hw/sensors.universal7420.so
 lib64/libhr.so
 lib64/libsensorlistener.so
-lib64/libsensorservice.so
 lib/hw/sensorhubs.universal7420.so
 lib/hw/sensors.universal7420.so
 lib/libsensorlistener.so
-lib/libsensorservice.so
 
 # SOMX
 etc/somxreg.conf
